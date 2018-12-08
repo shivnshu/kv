@@ -1,9 +1,4 @@
-# KV
-_Distributed key-value store using Elixir_
+# KvUmbrella
 
-```
-| | ____   __
-| |/ /\ \ / /
-|   <  \ V / 
-|_|\_\  \_/  
-```
+**TODO: Add description**
+
