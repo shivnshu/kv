@@ -6,10 +6,10 @@ defmodule KVServer.Application do
   use Application
 
   def start(_type, _args) do
-    # List all child processes to be supervised
+    port = String.to_integer(System.get_env("PORT") || raise "missing $PORT environment variable")
     children = [
       {Task.Supervisor, name: KVServer.TaskSupervisor},
-      Supervisor.child_spec({Task, fn -> KVServer.accept(4040) end}, restart: :permanent)
+      Supervisor.child_spec({Task, fn -> KVServer.accept(port) end}, restart: :permanent)
       # {Task, fn -> KVServer.accept(4040) end}
     ]
 
